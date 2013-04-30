@@ -5,7 +5,7 @@
 
 	$(document).ready(function(){
 		
-		
+		var seleccion			= $();
 		var ancho_inicial		= 0;
 		var alto_inicial		= 0;
 		var posicion_x			= 0;
