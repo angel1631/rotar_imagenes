@@ -79,6 +79,9 @@
 					elemento.css("left", posicion_x);
 				}
 		}
+		function regresar_x(){
+			
+		}
 		function redimensionar(elemento){
 			ancho_inicial=elemento.width();
 			alto_inicial=elemento.height();
