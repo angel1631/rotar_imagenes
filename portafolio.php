@@ -1,5 +1,6 @@
 
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
 	<script type="text/javascript">
 	
 
@@ -164,15 +165,18 @@
 			return posicion_y;
 		}
 		function rotar(elemento){
-			numero_aleatorio=Math.round(Math.random()*50);
+			numero_aleatorio=Math.round(Math.random()*360);
 			if(Math.round(Math.random()*10)>=5){
 				signo="+";
 			}else{
 				signo="-";
 			}
-			//elemento.css("z-index", numero_aleatorio);
-			//elemento.css("transform", "rotate("+signo+""+numero_aleatorio+"deg)");  
-			elemento.css("-webkit-transform", "rotate("+signo+""+numero_aleatorio+"deg)");
+			
+			elemento.rotate({
+		      angle:0, 
+		      animateTo: numero_aleatorio 
+		     
+		   });
 		}
 		function sacar(elemento,nueva_posicion){
 			
@@ -186,7 +190,11 @@
 				$(this).css("box-shadow", "0px 0px 5px #000");
 				rotar(anterior);
 				anterior = elemento;
-				elemento.css("-webkit-transform", "rotate(0deg)");
+				//elemento.css("-webkit-transform", "rotate(0deg)");
+				elemento.rotate({
+					angle:360,
+					animateTo: 0
+				});
 				elemento.css("z-index", incremental);
 				
 			});
